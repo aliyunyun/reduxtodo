@@ -1,5 +1,6 @@
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Todo = ({ onClick, completed, text}) => (
     <li
@@ -13,7 +14,7 @@ const Todo = ({ onClick, completed, text}) => (
 );
 
 Todo.propTypes = {
-    onclick: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
 };

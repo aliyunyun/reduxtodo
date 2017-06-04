@@ -13,13 +13,15 @@ function visibilityFilter(state = SHOW_ALL, action){
 }
 
 function todos(state = [], action){
+
   switch(action.type){
     case ADD_TODO:
       return [
         ...state,
         {
           text:action.text,
-          completed:false
+          completed:false,
+          id:state.length || 0
         }
       ];
     case TOGGLE_TODO:
@@ -28,6 +30,8 @@ function todos(state = [], action){
           return Object.assign({}, todo, {
             completed: !todo.completed
           });
+        }else{
+          return todo;
         }
       });
     default:
